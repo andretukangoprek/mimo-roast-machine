@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --foreground-rgb: 255, 255, 255; --background-start-rgb: 15, 10, 5; --background-end-rgb: 30, 15, 5; }
+
+body { color: rgb(var(--foreground-rgb)); background: linear-gradient(135deg, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))); min-height: 100vh; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+
+@keyframes fireGlow { 0%, 100% { text-shadow: 0 0 10px #f97316, 0 0 20px #ef4444, 0 0 30px #dc2626; } 50% { text-shadow: 0 0 20px #fb923c, 0 0 40px #f97316, 0 0 60px #ef4444; } }
+.fire-glow { animation: fireGlow 2s ease-in-out infinite; }
+
+@keyframes smokeRise { 0% { opacity: 0.6; transform: translateY(0) scale(1); } 100% { opacity: 0; transform: translateY(-60px) scale(1.5); } }
+.smoke { position: absolute; width: 20px; height: 20px; background: rgba(255,255,255,0.1); border-radius: 50%; animation: smokeRise 3s ease-out infinite; }
+
+.roast-text { background: linear-gradient(135deg, #f97316, #ef4444, #dc2626); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+textarea::-webkit-scrollbar { width: 6px; }
+textarea::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); border-radius: 3px; }
+textarea::-webkit-scrollbar-thumb { background: #f97316; border-radius: 3px; }
